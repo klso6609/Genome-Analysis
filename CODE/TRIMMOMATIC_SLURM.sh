@@ -11,7 +11,10 @@
 
 # Load modules
 module load bioinfo-tools
-module load spider trimmomatic
+module load trimmomatic
+
+#Pathway
+$path=$HOME/GitHub/Genome-Analysis/RESULTS/PREPROCESSING/TRIMMOMATIC
 
 # Your commands 
 #ILLUMINACLIP
@@ -19,8 +22,8 @@ module load spider trimmomatic
 cd $HOME/GitHub/Genome-Analysis/INTERMEDIATE
 
 trimmomatic PE $HOME/GitHub/Genome-Analysis/DATA/RAW/genomic_data/Illumina/E745-1.L500_SZAXPI015146-56_1_clean.fq.gz \
-$HOME/GitHub/Genome-Analysis/DATA/RAW/genomic_data/Illumina/E745-1.L500_SZAXPI015146-56_2_clean.fq.gz \
-trimmomatic_output_forward trimmomatic_output_reverse ILLUMINACLIP:TruSeq2-PE.fa   
+$HOME/GitHub/Genome-Analysis/DATA/RAW/genomic_data/Illumina/E745-1.L500_SZAXPI015146-56_2_clean.fq.gz $path/trimmomatic_output_unpaired_forward \ 
+$path/trimmomatic_output_paired_forward $path/trimmomatic_output_unpaired_reverse $path/trimmomatic_output_paired_reverse ILLUMINACLIP:TruSeq3-PE.fa TRAILING:20   
 
  
 
