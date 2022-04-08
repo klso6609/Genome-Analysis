@@ -10,10 +10,9 @@
 
 # Load modules
 module load bioinfo-tools
-module load canu/2.0
+module load prokka
 
 # Your commands
 # -p vad filen ska heta
 # -d vart du vill lägga resultatet 
-cd $HOME/GitHub/Genome-Analysis/INTERMEDIATE
-canu -p PACBIO_DNA_ASSEMBLY_CANU -d $HOME/GitHub/Genome-Analysis/RESULTS/ASSEMBLY genomeSize=2.7m -pacbio $HOME/GitHub/Genome-Analysis/DATA/RAW/genomics_data/PacBio/*
+prokka /home/klso6609/GitHub/Genome-Analysis/RESULTS/ASSEMBLY/PACBIO_DNA_ASSEMBLY_CANU.contigs.fasta

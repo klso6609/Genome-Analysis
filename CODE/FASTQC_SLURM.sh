@@ -4,10 +4,9 @@
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 06:00:00
-#SBATCH -J job_name
+#SBATCH -J FastQC_pre
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user ksolander@me.com
-#SBATCH --reservation=uppmax2022-2-5_2
 
 # Load modules
 module load bioinfo-tools
@@ -21,5 +20,5 @@ module load FastQC
 #-c [contaminant file]
 # ange sen alla sekvens filer
 
-fastqc -o $HOME/GitHub/Genome-Analysis/RESULTS/PREPROCESSING/QC -f fastq -d $HOME/GitHub/Genome-Analysis/INTERMEDIATE $HOME/GitHub/Genome-Analysis/DATA/RAW/genomic_data/Illumina/* 
+fastqc -o $HOME/GitHub/Genome-Analysis/RESULTS/PREPROCESSING/QC_ILLUMINA -f fastq -d $HOME/GitHub/Genome-Analysis/INTERMEDIATE $HOME/GitHub/Genome-Analysis/DATA/RAW/genomics_data/Illumina/* 
 
